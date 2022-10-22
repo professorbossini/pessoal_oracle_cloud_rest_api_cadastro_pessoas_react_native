@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import AddPessoaTela from './telas/AddPessoaTela';
+import ListaPessoaTela from './telas/ListaPessoaTela';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
@@ -8,11 +9,18 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator 
-        initialRouteName='AddPessoa'
-        screenOptions={{}}>
+        initialRouteName='ListaPessoa'
+        screenOptions={{
+            headerStyle: {backgroundColor: 'blue'},
+
+        }}>
         <Stack.Screen 
           name="AddPessoa" 
-          component={AddPessoaTela}/>
+          component={AddPessoaTela}
+        />
+        <Stack.Screen 
+          name='ListaPessoa'
+          component={ListaPessoaTela}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
