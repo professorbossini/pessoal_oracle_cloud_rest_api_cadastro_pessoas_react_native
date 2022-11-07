@@ -1,6 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native';
-import AddPessoaTela from './telas/AddPessoaTela';
-import ListaPessoaTela from './telas/ListaPessoaTela';
+import PessoaAddTela from './telas/PessoaAddTela'
+import PessoaListTela from './telas/PessoaListTela';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
@@ -9,26 +8,15 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator 
-        initialRouteName='ListaPessoa'
-        screenOptions={{
-            headerStyle: {backgroundColor: 'blue'},
-
-        }}>
+        initialRouteName='PessoaList'>
         <Stack.Screen 
-          name="AddPessoa" 
-          component={AddPessoaTela}
+          name="PessoaAdd" 
+          component={PessoaAddTela}
         />
         <Stack.Screen 
-          name='ListaPessoa'
-          component={ListaPessoaTela}/>
+          name='PessoaList'
+          component={PessoaListTela}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    marginTop: 20
-  },
-});
